@@ -10,7 +10,7 @@ License: 	GPL or Artistic
 Group:		Development/Perl
 Url:		http://www.cpan.org
 Source0:	%{module}-%{version}.tar.bz2
-BuildRequires:	perl >= 5.8.6 , perl-devel 
+BuildRequires:	perl-devel >= 5.8.6
 Requires: 	perl >= 5.8.6
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 Buildarch: 	noarch
