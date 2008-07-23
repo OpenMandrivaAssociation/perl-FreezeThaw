@@ -1,6 +1,6 @@
 %define module 	FreezeThaw
 %define version 0.43
-%define release %mkrel 5
+%define release %mkrel 7
 
 Summary:	%{module} perl module
 Name: 		perl-%{module}
