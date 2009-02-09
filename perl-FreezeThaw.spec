@@ -1,6 +1,6 @@
 %define module 	FreezeThaw
-%define version 0.43
-%define release %mkrel 7
+%define version 0.44
+%define release %mkrel 1
 
 Summary:	%{module} perl module
 Name: 		perl-%{module}
@@ -8,12 +8,10 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	GPL or Artistic
 Group:		Development/Perl
-Url:		http://www.cpan.org
-Source0:	%{module}-%{version}.tar.bz2
-BuildRequires:	perl-devel >= 5.8.6
-Requires: 	perl >= 5.8.6
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
+URL:        http://search.cpan.org/dist/%{module}
+Source:     http://www.cpan.org/modules/by-module/Freeze/%{module}-%{version}.tar.gz
 Buildarch: 	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}
 
 %description
 %{module} convert Perl structures to strings and back. 
@@ -27,16 +25,14 @@ Buildarch: 	noarch
 make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean 
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
 %doc README MANIFEST Changes
 %{perl_vendorlib}/*.pm
 %{_mandir}/*/*
-
-
