@@ -1,23 +1,24 @@
-%define module 	FreezeThaw
-%define version 0.45
-%define release %mkrel 1
+%define upstream_name 	 FreezeThaw
+%define upstream_version 0.45
 
-Summary:	%{module} perl module
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:	%{upstream_name} perl module
+License: 	GPL+ or Artistic
 Group:		Development/Perl
-URL:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Freeze/%{module}-%{version}.tar.gz
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Freeze/%{upstream_name}-%{upstream_version}.tar.gz
+
 Buildarch: 	noarch
-BuildRoot: 	%{_tmppath}/%{name}-%{version}
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-%{module} convert Perl structures to strings and back. 
+%{upstream_name} convert Perl structures to strings and back. 
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
