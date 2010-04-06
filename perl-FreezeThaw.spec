@@ -1,5 +1,5 @@
 %define upstream_name 	 FreezeThaw
-%define upstream_version 0.50
+%define upstream_version 0.5001
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
