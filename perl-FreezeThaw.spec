@@ -3,9 +3,8 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
-
-Summary:	%{upstream_name} perl module
+Release:    %mkrel 2
+Summary:	Converting Perl structures to strings and back
 License: 	GPL+ or Artistic
 Group:		Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
@@ -15,19 +14,27 @@ Buildarch: 	noarch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-%{upstream_name} convert Perl structures to strings and back. 
+Converts data to/from stringified form, appropriate for saving-to/reading-from
+permanent storage.
+
+Deals with objects, circular lists, repeated appearence of the same refence.
+Does not deal with overloaded stringify operator yet.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
+find . -type f | xargs chmod 644
+find . -type d | xargs chmod 755
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
-make test
 
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+
+%check
+make test
 
 %clean 
 rm -rf %{buildroot}
