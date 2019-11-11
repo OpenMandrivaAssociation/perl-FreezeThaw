@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	6
 Summary:	Converting Perl structures to strings and back
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -27,13 +27,10 @@ find . -type d | xargs chmod 755
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %install
-%makeinstall_std
-
-%check
-make test
+%make_install
 
 %files 
 %doc README MANIFEST Changes
