@@ -2,13 +2,13 @@
 %define upstream_version 0.5001
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Version:	%{upstream_version}
+Release:	7
 Summary:	Converting Perl structures to strings and back
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Freeze/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/FreezeThaw
+Source0:	https://cpan.metacpan.org/authors/id/I/IL/ILYAZ/modules/FreezeThaw-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
