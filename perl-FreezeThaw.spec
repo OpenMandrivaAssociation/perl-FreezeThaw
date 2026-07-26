@@ -1,14 +1,12 @@
 %define upstream_name 	 FreezeThaw
-%define upstream_version 0.5001
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	7
+Version:	0.5001
+Release:	8
 Summary:	Converting Perl structures to strings and back
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/FreezeThaw
-Source0:	https://cpan.metacpan.org/authors/id/I/IL/ILYAZ/modules/FreezeThaw-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IL/ILYAZ/modules/FreezeThaw-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ Deals with objects, circular lists, repeated appearence of the same refence.
 Does not deal with overloaded stringify operator yet.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 find . -type f | xargs chmod 644
 find . -type d | xargs chmod 755
 
@@ -55,9 +53,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.450.0-1mdv2010.0
 + Revision: 403184
-- rebuild using %%perl_convert_version
-
-* Mon Feb 16 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.45-1mdv2009.1
+- rebuild using %0.5001 Mon Feb 16 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.45-1mdv2009.1
 + Revision: 341079
 - new version
 - new version
