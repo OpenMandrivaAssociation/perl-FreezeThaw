@@ -2,7 +2,7 @@
 %define upstream_version 0.5001
 Name:		perl-%{upstream_name}
 Version:	0.5001
-Release:	2
+Release:	3
 Summary:	Converting Perl structures to strings and back
 License:	GPL+ or Artistic
 Group:		Development/Perl
