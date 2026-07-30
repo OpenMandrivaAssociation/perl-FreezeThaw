@@ -2,7 +2,7 @@
 %define upstream_version 0.5001
 Name:		perl-%{upstream_name}
 Version:	0.5001
-Release:	1
+Release:	2
 Summary:	Converting Perl structures to strings and back
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -21,7 +21,7 @@ Deals with objects, circular lists, repeated appearence of the same refence.
 Does not deal with overloaded stringify operator yet.
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n FreezeThaw-0.5001
 find . -type f | xargs chmod 644
 find . -type d | xargs chmod 755
 
